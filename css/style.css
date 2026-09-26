@@ -622,12 +622,15 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
   background: var(--clr-bg-2);
   border-top: 1px solid var(--clr-border);
   margin-top: auto;
+  width: 100%;
 }
-.footer-top {
+.footer-top,
+.footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
   gap: var(--spacing-2xl);
   padding: var(--spacing-3xl) var(--spacing-xl);
+  align-items: start;
 }
 .footer-brand p { color: var(--clr-text-2); font-size: 0.9rem; margin: 1rem 0 1.25rem; }
 .social-links { display: flex; gap: 10px; }
@@ -647,20 +650,24 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
   color: #000;
   border-color: var(--clr-primary);
 }
-.footer-links h4 {
+.footer-links h4,
+.footer-col h4 {
   font-family: var(--font-head);
   font-size: 1rem;
   font-weight: 700;
   color: var(--clr-white);
   margin-bottom: 1rem;
 }
-.footer-links ul { display: flex; flex-direction: column; gap: 0.6rem; }
-.footer-links a {
+.footer-links ul,
+.footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a,
+.footer-col a {
   color: var(--clr-text-2);
   font-size: 0.9rem;
   transition: color var(--ease-fast);
 }
-.footer-links a:hover { color: var(--clr-primary); }
+.footer-links a:hover,
+.footer-col a:hover { color: var(--clr-primary); }
 .footer-contact h4 {
   font-family: var(--font-head);
   font-size: 1rem;

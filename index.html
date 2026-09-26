@@ -143,7 +143,235 @@
           <h2 class="section-title">Featured Products</h2>
           <a href="products.html?sort=price-asc" class="section-link" id="view-all-featured">View All →</a>
         </div>
-        <div class="products-grid" id="featured-grid"></div>
+        <div class="products-grid" id="featured-grid">
+          <!-- 1. CR2032 Battery (₹199) -->
+          <div class="product-card" data-id="15">
+            <div class="product-img-wrap">
+              <a href="product.html?id=15">
+                <img src="assets/images/product_cmosrtc.jpg" alt="CR2032 3V Lithium CMOS Battery with 2-Pin Cable &amp; RTC Module" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-sale">SALE</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(15, this)" aria-label="Toggle wishlist" id="wish-15">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Maxell</div>
+              <a href="product.html?id=15"><div class="product-name">CR2032 3V Lithium CMOS Battery with 2-Pin Cable &amp; RTC Module</div></a>
+              <div class="product-rating">★★★★★<span>(520)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹199</span>
+                <span class="product-mrp">₹349</span>
+                <span class="product-discount">43% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(15)" id="atc-15">Add to Cart</button>
+                <a href="product.html?id=15" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Case Switch Cables (₹299) -->
+          <div class="product-card" data-id="14">
+            <div class="product-img-wrap">
+              <a href="product.html?id=14">
+                <img src="assets/images/product_caseswitch.jpg" alt="ATX PC Desktop Case Power &amp; Reset Switch Cable Kit" loading="lazy" />
+              </a>
+              <div class="product-badges"></div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(14, this)" aria-label="Toggle wishlist" id="wish-14">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">DishaMail Essentials</div>
+              <a href="product.html?id=14"><div class="product-name">ATX PC Desktop Case Power &amp; Reset Switch Cable Kit</div></a>
+              <div class="product-rating">★★★★★<span>(152)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹299</span>
+                <span class="product-mrp">₹499</span>
+                <span class="product-discount">40% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(14)" id="atc-14">Add to Cart</button>
+                <a href="product.html?id=14" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Dell Keyboard (₹599) -->
+          <div class="product-card" data-id="17">
+            <div class="product-img-wrap">
+              <a href="product.html?id=17">
+                <img src="assets/images/product_keyboard.jpg" alt="Dell KB216 Wired Multimedia Desktop Keyboard" loading="lazy" />
+              </a>
+              <div class="product-badges"></div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(17, this)" aria-label="Toggle wishlist" id="wish-17">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Dell</div>
+              <a href="product.html?id=17"><div class="product-name">Dell KB216 Wired Multimedia Desktop Keyboard</div></a>
+              <div class="product-rating">★★★★★<span>(2850)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹599</span>
+                <span class="product-mrp">₹999</span>
+                <span class="product-discount">40% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(17)" id="atc-17">Add to Cart</button>
+                <a href="product.html?id=17" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Acer 4-in-1 Hub (₹649) -->
+          <div class="product-card" data-id="19">
+            <div class="product-img-wrap">
+              <a href="product.html?id=19">
+                <img src="assets/images/product_acerhub.jpg" alt="Acer MultiLink 4-in-1 USB 3.0 &amp; Type-C Multiport Hub" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-new">NEW</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(19, this)" aria-label="Toggle wishlist" id="wish-19">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Acer</div>
+              <a href="product.html?id=19"><div class="product-name">Acer MultiLink 4-in-1 USB 3.0 &amp; Type-C Multiport Hub</div></a>
+              <div class="product-rating">★★★★★<span>(930)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹649</span>
+                <span class="product-mrp">₹999</span>
+                <span class="product-discount">35% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(19)" id="atc-19">Add to Cart</button>
+                <a href="product.html?id=19" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Logitech Optical Mouse Combo (₹849) -->
+          <div class="product-card" data-id="16">
+            <div class="product-img-wrap">
+              <a href="product.html?id=16">
+                <img src="assets/images/product_opticalmouse.jpg" alt="Logitech M170 Wireless &amp; B100 Wired Optical Mouse Combo" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-hot">HOT</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(16, this)" aria-label="Toggle wishlist" id="wish-16">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Logitech</div>
+              <a href="product.html?id=16"><div class="product-name">Logitech M170 Wireless &amp; B100 Wired Optical Mouse Combo</div></a>
+              <div class="product-rating">★★★★★<span>(1420)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹849</span>
+                <span class="product-mrp">₹1,295</span>
+                <span class="product-discount">34% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(16)" id="atc-16">Add to Cart</button>
+                <a href="product.html?id=16" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Frontech 450W PSU (₹849) -->
+          <div class="product-card" data-id="18">
+            <div class="product-img-wrap">
+              <a href="product.html?id=18">
+                <img src="assets/images/product_frontechpsu.jpg" alt="Frontech PS-0005 450W Desktop ATX SMPS Power Supply" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-sale">SALE</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(18, this)" aria-label="Toggle wishlist" id="wish-18">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Frontech</div>
+              <a href="product.html?id=18"><div class="product-name">Frontech PS-0005 450W Desktop ATX SMPS Power Supply</div></a>
+              <div class="product-rating">★★★★☆<span>(680)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹849</span>
+                <span class="product-mrp">₹1,400</span>
+                <span class="product-discount">39% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(18)" id="atc-18">Add to Cart</button>
+                <a href="product.html?id=18" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Cooler Master ARGB Fan (₹1,299) -->
+          <div class="product-card" data-id="13">
+            <div class="product-img-wrap">
+              <a href="product.html?id=13">
+                <img src="assets/images/product_cpufan.jpg" alt="Cooler Master 120mm ARGB CPU Cooling Fan" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-hot">HOT</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(13, this)" aria-label="Toggle wishlist" id="wish-13">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">Cooler Master</div>
+              <a href="product.html?id=13"><div class="product-name">Cooler Master 120mm ARGB CPU Cooling Fan</div></a>
+              <div class="product-rating">★★★★★<span>(384)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹1,299</span>
+                <span class="product-mrp">₹1,999</span>
+                <span class="product-discount">35% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(13)" id="atc-13">Add to Cart</button>
+                <a href="product.html?id=13" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Professional PC Repair Kit (₹1,999) -->
+          <div class="product-card" data-id="12">
+            <div class="product-img-wrap">
+              <a href="product.html?id=12">
+                <img src="assets/images/product_repair.jpg" alt="Professional PC Repair Kit 32-in-1" loading="lazy" />
+              </a>
+              <div class="product-badges">
+                <span class="product-badge badge-new">NEW</span>
+              </div>
+              <button class="product-wishlist-btn" onclick="handleWishlist(12, this)" aria-label="Toggle wishlist" id="wish-12">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <div class="product-brand">iFixit</div>
+              <a href="product.html?id=12"><div class="product-name">Professional PC Repair Kit 32-in-1</div></a>
+              <div class="product-rating">★★★★★<span>(456)</span></div>
+              <div class="product-price-row">
+                <span class="product-price">₹1,999</span>
+                <span class="product-mrp">₹2,999</span>
+                <span class="product-discount">33% OFF</span>
+              </div>
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="handleAddToCart(12)" id="atc-12">Add to Cart</button>
+                <a href="product.html?id=12" class="btn-view">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -324,9 +552,9 @@
   <div class="toast-container" id="toast-container"></div>
   <div class="mobile-overlay" id="mobile-overlay"></div>
 
-  <script src="js/data.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
+  <script src="js/data.js?v=2.1"></script>
+  <script src="js/cart.js?v=2.1"></script>
+  <script src="js/main.js?v=2.1"></script>
+  <script src="js/home.js?v=2.1"></script>
 </body>
 </html>
