@@ -37,6 +37,11 @@ function parseURLParams() {
     const saleBox = document.getElementById('sale-only');
     if (saleBox) saleBox.checked = true;
   }
+  const sort = params.get('sort');
+  if (sort) {
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) sortSelect.value = sort;
+  }
 }
 
 function updateBreadcrumb(cat) {

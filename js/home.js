@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
 });
 
-/* ---- Featured Products ---- */
+/* ---- Products: Price Low to High (Total 8) ---- */
 function renderFeatured() {
   const grid = document.getElementById('featured-grid');
   if (!grid) return;
-  const featured = getProducts({ featured: true });
-  grid.innerHTML = featured.map(buildProductCard).join('');
+  const products = [...PRODUCTS]
+    .sort((a, b) => a.price - b.price)
+    .slice(0, 8);
+  grid.innerHTML = products.map(buildProductCard).join('');
 }
 
 /* ---- Countdown Timer ---- */
