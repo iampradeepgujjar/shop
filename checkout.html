@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout – TechNexus</title>
+  <meta name="description" content="Complete your TechNexus order – enter your address and payment details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top"><div class="container"><span>🔒 Secure Checkout – All transactions are encrypted</span></div></div>
+    <nav class="navbar container">
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <div style="flex:1"></div>
+      <div class="nav-actions">
+        <button class="nav-icon-btn cart-btn" onclick="window.location='cart.html'" aria-label="Back to Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>Checkout</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span>
+      <a href="cart.html">Cart</a><span>/</span>
+      <span>Checkout</span>
+    </div>
+  </section>
+
+  <!-- CHECKOUT PROGRESS -->
+  <div class="checkout-progress container">
+    <div class="progress-step done"><div class="ps-num">✓</div><span>Cart</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step active"><div class="ps-num">2</div><span>Address</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step"><div class="ps-num">3</div><span>Payment</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step"><div class="ps-num">4</div><span>Confirm</span></div>
+  </div>
+
+  <main class="checkout-page container" id="checkout-page">
+
+    <!-- LEFT: FORM SECTIONS -->
+    <div class="checkout-form-section">
+
+      <!-- STEP 1: CONTACT INFO -->
+      <div class="form-card" id="step-contact">
+        <h3><span>👤</span> Contact Information</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Rahul" required autocomplete="given-name" />
+            <span class="form-error" id="err-first-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last_name" class="form-control" placeholder="Sharma" required autocomplete="family-name" />
+            <span class="form-error" id="err-last-name"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="rahul@example.com" required autocomplete="email" />
+            <span class="form-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210" required autocomplete="tel" maxlength="15" />
+            <span class="form-error" id="err-phone"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: SHIPPING ADDRESS -->
+      <div class="form-card" id="step-address">
+        <h3><span>📍</span> Shipping Address</h3>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="address-line1">Address Line 1 *</label>
+            <input type="text" id="address-line1" name="address1" class="form-control" placeholder="House No. / Flat No., Street Name" required autocomplete="address-line1" />
+            <span class="form-error" id="err-address1"></span>
+          </div>
+          <div class="form-group full">
+            <label for="address-line2">Address Line 2 <small>(Optional)</small></label>
+            <input type="text" id="address-line2" name="address2" class="form-control" placeholder="Landmark, Area" autocomplete="address-line2" />
+          </div>
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" class="form-control" placeholder="Bangalore" required autocomplete="address-level2" />
+            <span class="form-error" id="err-city"></span>
+          </div>
+          <div class="form-group">
+            <label for="state">State *</label>
+            <select id="state" name="state" class="form-control" required autocomplete="address-level1">
+              <option value="">Select State</option>
+              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+              <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option>
+              <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+              <option>Jharkhand</option><option selected>Karnataka</option><option>Kerala</option>
+              <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
+              <option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
+              <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+              <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+              <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+              <option>West Bengal</option><option>Delhi</option>
+            </select>
+            <span class="form-error" id="err-state"></span>
+          </div>
+          <div class="form-group">
+            <label for="pincode">PIN Code *</label>
+            <input type="text" id="pincode" name="pincode" class="form-control" placeholder="560001" required maxlength="6" pattern="\d{6}" autocomplete="postal-code" />
+            <span class="form-error" id="err-pincode"></span>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" class="form-control" value="India" readonly />
+          </div>
+        </div>
+
+        <!-- Address Type -->
+        <div class="form-group" style="margin-top:1rem;">
+          <label>Address Type</label>
+          <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+            <label class="filter-opt"><input type="radio" name="addr_type" value="home" checked /> 🏠 Home</label>
+            <label class="filter-opt"><input type="radio" name="addr_type" value="work" /> 🏢 Work</label>
+            <label class="filter-opt"><input type="radio" name="addr_type" value="other" /> 📦 Other</label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label class="filter-opt">
+            <input type="checkbox" id="save-address" />
+            Save this address for future orders
+          </label>
+        </div>
+      </div>
+
+      <!-- STEP 3: PAYMENT -->
+      <div class="form-card" id="step-payment">
+        <h3><span>💳</span> Payment Method</h3>
+
+        <!-- Hidden fixed value: always paytm -->
+        <input type="hidden" name="payment" value="paytm" id="pm-paytm" />
+
+        <!-- Paytm Gateway Card -->
+        <div class="paytm-gateway-card">
+          <div class="paytm-gateway-header">
+            <div class="paytm-logo-large">
+              <span class="pt-pay">pay</span><span class="pt-tm">tm</span>
+            </div>
+            <span class="pm-badge">Secure Gateway</span>
+          </div>
+
+          <p class="paytm-gateway-desc">
+            You will be securely redirected to Paytm to complete your payment.
+            Paytm supports <strong>Paytm Wallet</strong>, <strong>UPI</strong>,
+            <strong>Credit/Debit Cards</strong>, <strong>Net Banking</strong> and more.
+          </p>
+
+          <div class="paytm-features">
+            <div class="paytm-feature"><span>💙</span> Paytm Wallet</div>
+            <div class="paytm-feature"><span>📱</span> UPI / BHIM</div>
+            <div class="paytm-feature"><span>💳</span> Cards</div>
+            <div class="paytm-feature"><span>🏦</span> Net Banking</div>
+          </div>
+
+          <div class="paytm-security-note">
+            🔒 &nbsp;256-bit SSL encrypted. Your payment details are never stored on our servers.
+          </div>
+
+          <div class="paytm-dev-note">
+            <div class="paytm-dev-label">Developer Integration Notes</div>
+            <code>
+              MID: YOUR_MERCHANT_ID<br/>
+              Key: YOUR_MERCHANT_KEY<br/>
+              Endpoint: https://securegw.paytm.in/theia/processTransaction<br/>
+              Checksum: Generate server-side via paytm-checksum library
+            </code>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER NOTES -->
+      <div class="form-card">
+        <h3><span>📝</span> Order Notes <small style="font-size:0.75rem;font-weight:400;color:var(--clr-text-3)">(Optional)</small></h3>
+        <div class="form-group">
+          <textarea id="order-notes" class="form-control" rows="3" placeholder="Any special instructions for delivery or packaging…"></textarea>
+        </div>
+      </div>
+
+      <!-- PLACE ORDER BUTTON -->
+      <button class="btn btn-primary btn-lg" id="place-order-btn" onclick="placeOrder()" style="width:100%;justify-content:center;">
+        🔒 Place Order & Pay Securely
+      </button>
+      <p style="text-align:center;font-size:0.8rem;color:var(--clr-text-3);margin-top:0.5rem;">
+        By placing your order you agree to our <a href="policy.html" style="color:var(--clr-primary)">Terms &amp; Conditions</a>.
+      </p>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <aside class="order-summary" id="order-summary-sidebar">
+      <h3>Order Summary</h3>
+
+      <div id="checkout-cart-items" style="margin-bottom:1rem;max-height:280px;overflow-y:auto;"></div>
+
+      <div style="height:1px;background:var(--clr-border);margin-bottom:1rem;"></div>
+
+      <div class="summary-rows" id="checkout-summary-rows"></div>
+
+      <div class="summary-total">
+        <span>Total</span>
+        <span id="checkout-total">₹0</span>
+      </div>
+
+      <div class="secure-badge">
+        🔒 100% Secure &amp; Encrypted Payment<br />
+        <span style="font-size:0.72rem;">We never store your card details</span>
+      </div>
+
+      <!-- Trust Badges -->
+      <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
+        <span class="pay-badge">Paytm</span>
+        <span class="pay-badge">UPI</span>
+        <span class="pay-badge">Visa</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">RuPay</span>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="site-footer"><div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved. All transactions secured by SSL.</p></div></footer>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

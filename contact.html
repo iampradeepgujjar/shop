@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – TechNexus</title>
+  <meta name="description" content="Contact TechNexus for product inquiries, repair bookings, or general support. We're available Mon–Sat 9AM–7PM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top"><div class="container"><span>📞 Contact us anytime – We're here to help</span></div></div>
+    <nav class="navbar container">
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <div class="nav-search">
+        <input type="search" id="nav-search-input" placeholder="Search products…" />
+        <button id="nav-search-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="repair.html">Repair</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="window.location='wishlist.html'" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="nav-icon-btn cart-btn" onclick="window.location='cart.html'" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>Contact Us</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+  </section>
+
+  <main class="container section" style="display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;align-items:start;" id="contact-layout">
+
+    <!-- Contact Info -->
+    <div style="display:flex;flex-direction:column;gap:1.5rem;">
+      <div>
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title" style="text-align:left;margin-top:0.75rem;">We'd Love to Hear From You</h2>
+        <p style="color:var(--clr-text-2);margin-top:0.75rem;">Have a question about a product, a repair booking, or just want to say hi? Our support team typically responds within 2 hours.</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);">
+          <span style="font-size:1.6rem;flex-shrink:0;">📍</span>
+          <div>
+            <h4 style="color:var(--clr-white);margin-bottom:4px;">Store Address</h4>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;">42-B, Tech Street, Sector 5<br/>Bangalore, Karnataka – 560001</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);">
+          <span style="font-size:1.6rem;flex-shrink:0;">📞</span>
+          <div>
+            <h4 style="color:var(--clr-white);margin-bottom:4px;">Phone</h4>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;"><a href="tel:+919876543210" style="color:var(--clr-primary);">+91-98765-43210</a><br/>Mon–Sat: 9 AM – 7 PM</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);">
+          <span style="font-size:1.6rem;flex-shrink:0;">✉️</span>
+          <div>
+            <h4 style="color:var(--clr-white);margin-bottom:4px;">Email</h4>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;"><a href="mailto:support@technexus.in" style="color:var(--clr-primary);">support@technexus.in</a><br/>Response within 2 hours</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);">
+          <span style="font-size:1.6rem;flex-shrink:0;">🕐</span>
+          <div>
+            <h4 style="color:var(--clr-white);margin-bottom:4px;">Store Hours</h4>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;">Monday – Saturday: 9 AM – 7 PM<br/>Sunday: 10 AM – 4 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Embed Placeholder -->
+      <div style="height:200px;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+        <span style="font-size:2.5rem;">🗺️</span>
+        <p style="color:var(--clr-text-2);font-size:0.875rem;">Google Maps embed goes here</p>
+        <a href="https://maps.google.com" target="_blank" class="btn btn-outline btn-sm">Open in Maps</a>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form class="form-card" id="contact-form" onsubmit="submitContact(event)">
+      <h3><span>💬</span> Send Us a Message</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="c-name">Your Name *</label>
+          <input type="text" id="c-name" class="form-control" placeholder="Full Name" required />
+        </div>
+        <div class="form-group">
+          <label for="c-phone">Phone Number</label>
+          <input type="tel" id="c-phone" class="form-control" placeholder="+91 98765 43210" />
+        </div>
+        <div class="form-group full">
+          <label for="c-email">Email Address *</label>
+          <input type="email" id="c-email" class="form-control" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group full">
+          <label for="c-subject">Subject *</label>
+          <select id="c-subject" class="form-control" required>
+            <option value="">Select a topic</option>
+            <option>Product Inquiry</option>
+            <option>Repair Booking</option>
+            <option>Order Status</option>
+            <option>Return / Refund</option>
+            <option>Warranty Claim</option>
+            <option>Technical Support</option>
+            <option>Bulk / B2B Order</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="c-message">Message *</label>
+          <textarea id="c-message" class="form-control" rows="5" placeholder="Tell us how we can help you…" required></textarea>
+        </div>
+        <div class="form-group full">
+          <label class="filter-opt">
+            <input type="checkbox" required />
+            I agree to the <a href="policy.html" style="color:var(--clr-primary);">Privacy Policy</a> *
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" id="contact-submit" style="width:100%;justify-content:center;margin-top:0.5rem;">
+        📩 Send Message
+      </button>
+    </form>
+  </main>
+
+  <!-- FAQ Section -->
+  <section class="section container" id="faq">
+    <div class="section-header">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:0.75rem;" id="faq-list">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-bottom container">
+      <p>© 2026 TechNexus. All rights reserved.</p>
+      <div class="payment-icons"><span class="pay-badge">Paytm</span><span class="pay-badge">UPI</span><span class="pay-badge">Visa</span></div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const FAQS = [
+      { q: 'Do you offer free diagnosis?', a: 'Yes! We offer a free basic diagnosis for most hardware and software issues. Call us or bring your device in.' },
+      { q: 'How long does a typical repair take?', a: 'Most repairs are completed within 2–4 hours on the same day. Complex hardware repairs or data recovery may take 1–2 days.' },
+      { q: 'Do you offer warranty on repairs?', a: 'Yes, all our repairs come with a 90-day warranty. If the same issue recurs, we fix it for free.' },
+      { q: 'Can you deliver products across India?', a: 'Absolutely! We ship pan-India within 2–4 business days. Orders above ₹2,999 get free shipping.' },
+      { q: 'What payment methods do you accept?', a: 'We accept Paytm, UPI, all major credit/debit cards, net banking, and cash on delivery.' },
+      { q: 'Can I return a product if I change my mind?', a: 'We offer a 7-day hassle-free return policy for products in original, sealed condition.' },
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      Cart.init();
+      renderFAQ();
+      // Responsive contact layout
+      if (window.innerWidth < 768) {
+        document.getElementById('contact-layout').style.gridTemplateColumns = '1fr';
+      }
+    });
+
+    function renderFAQ() {
+      const list = document.getElementById('faq-list');
+      list.innerHTML = FAQS.map((f, i) => `
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-md);overflow:hidden;">
+          <button onclick="toggleFAQ(${i})" style="width:100%;text-align:left;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;color:var(--clr-white);font-family:var(--font-head);font-weight:600;font-size:0.95rem;" id="faq-btn-${i}" aria-expanded="false">
+            ${f.q}
+            <span id="faq-icon-${i}" style="font-size:1.2rem;color:var(--clr-primary);transition:transform 0.3s;">+</span>
+          </button>
+          <div id="faq-ans-${i}" style="display:none;padding:0 1.25rem 1rem;color:var(--clr-text-2);font-size:0.875rem;line-height:1.7;">${f.a}</div>
+        </div>
+      `).join('');
+    }
+
+    function toggleFAQ(i) {
+      const ans  = document.getElementById(`faq-ans-${i}`);
+      const icon = document.getElementById(`faq-icon-${i}`);
+      const btn  = document.getElementById(`faq-btn-${i}`);
+      const open = ans.style.display === 'block';
+      ans.style.display  = open ? 'none' : 'block';
+      icon.textContent   = open ? '+' : '−';
+      icon.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
+      btn.setAttribute('aria-expanded', !open);
+    }
+
+    function submitContact(e) {
+      e.preventDefault();
+      const btn = document.getElementById('contact-submit');
+      btn.disabled = true; btn.textContent = 'Sending…';
+      setTimeout(() => {
+        showToast('Message sent! We will reply within 2 hours.', 'success');
+        btn.textContent = '✓ Message Sent!';
+        btn.style.background = 'var(--clr-success)';
+        document.getElementById('contact-form').reset();
+        setTimeout(() => { btn.disabled = false; btn.innerHTML = '📩 Send Message'; btn.style.background = ''; }, 4000);
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

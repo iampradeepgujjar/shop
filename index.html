@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechNexus – Premium Computer Parts & Repair</title>
+  <meta name="description" content="TechNexus – Your one-stop destination for premium computer parts, PC components, and professional repair services. Shop CPUs, GPUs, RAM, SSDs & more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header" id="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>🚀 Free Shipping on orders above ₹2,999 &nbsp;|&nbsp; 📞 Support: +91-98765-43210</span>
+      </div>
+    </div>
+    <nav class="navbar container" role="navigation" aria-label="Main Navigation">
+      <a href="index.html" class="logo" aria-label="TechNexus Home">
+        <div class="logo-icon">⚡</div>
+        <span class="logo-text">Tech<span class="accent">Nexus</span></span>
+      </a>
+      <div class="nav-search">
+        <input type="search" id="nav-search-input" placeholder="Search components, brands…" aria-label="Search products" />
+        <button id="nav-search-btn" aria-label="Submit search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="repair.html">Repair</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="wishlist-btn" aria-label="Wishlist" onclick="window.location='wishlist.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="nav-icon-btn cart-btn" id="cart-toggle-btn" aria-label="Cart" onclick="window.location='cart.html'">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="assets/images/hero_banner.jpg" alt="Premium computer parts" class="hero-bg-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content container">
+        <div class="hero-badge">⭐ #1 Computer Parts Store in India</div>
+        <h1 class="hero-title">Build Your <br /><span class="gradient-text">Dream PC</span></h1>
+        <p class="hero-subtitle">Premium components. Expert repairs. Unbeatable prices. Everything you need to forge your ultimate machine.</p>
+        <div class="hero-cta">
+          <a href="products.html" class="btn btn-primary" id="hero-shop-btn">Shop Now</a>
+          <a href="repair.html" class="btn btn-ghost" id="hero-repair-btn">Book Repair</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">5000+</span><span class="stat-label">Products</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Happy Customers</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">2-Day</span><span class="stat-label">Fast Shipping</span></div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Shop by Category</span>
+          <h2 class="section-title">Find Your Component</h2>
+          <p class="section-subtitle">Everything from processors to peripherals — curated for builders.</p>
+        </div>
+        <div class="categories-grid" id="categories-grid">
+          <a href="products.html?cat=cpu" class="category-card" id="cat-cpu">
+            <div class="cat-icon">🔷</div>
+            <h3>Processors</h3><p>Intel &amp; AMD CPUs</p>
+            <span class="cat-count">48 items</span>
+          </a>
+          <a href="products.html?cat=gpu" class="category-card" id="cat-gpu">
+            <div class="cat-icon">🎮</div>
+            <h3>Graphics Cards</h3><p>NVIDIA &amp; AMD GPUs</p>
+            <span class="cat-count">36 items</span>
+          </a>
+          <a href="products.html?cat=ram" class="category-card" id="cat-ram">
+            <div class="cat-icon">📊</div>
+            <h3>Memory (RAM)</h3><p>DDR4 &amp; DDR5</p>
+            <span class="cat-count">62 items</span>
+          </a>
+          <a href="products.html?cat=ssd" class="category-card" id="cat-ssd">
+            <div class="cat-icon">💾</div>
+            <h3>Storage</h3><p>SSD, NVMe, HDD</p>
+            <span class="cat-count">74 items</span>
+          </a>
+          <a href="products.html?cat=motherboard" class="category-card" id="cat-mb">
+            <div class="cat-icon">🖥️</div>
+            <h3>Motherboards</h3><p>ATX, mATX, ITX</p>
+            <span class="cat-count">52 items</span>
+          </a>
+          <a href="products.html?cat=cooler" class="category-card" id="cat-cool">
+            <div class="cat-icon">❄️</div>
+            <h3>Cooling</h3><p>Air &amp; Liquid Cooling</p>
+            <span class="cat-count">41 items</span>
+          </a>
+          <a href="products.html?cat=psu" class="category-card" id="cat-psu">
+            <div class="cat-icon">⚡</div>
+            <h3>Power Supplies</h3><p>80+ Bronze to Titanium</p>
+            <span class="cat-count">29 items</span>
+          </a>
+          <a href="repair.html" class="category-card category-repair" id="cat-repair">
+            <div class="cat-icon">🔧</div>
+            <h3>Repair Services</h3><p>Professional PC Repair</p>
+            <span class="cat-count">Book Now →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured section" id="featured-products">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Hot Right Now</span>
+          <h2 class="section-title">Featured Products</h2>
+          <a href="products.html" class="section-link" id="view-all-featured">View All →</a>
+        </div>
+        <div class="products-grid" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- DEALS BANNER -->
+    <section class="deals-banner section" id="deals-banner">
+      <div class="container">
+        <div class="deals-content">
+          <div class="deals-text">
+            <span class="deals-tag">⚡ Flash Sale</span>
+            <h2>Up to <span class="accent-text">40% OFF</span> on SSDs &amp; RAM</h2>
+            <p>Limited time offer. Upgrade your system's speed today!</p>
+            <a href="products.html?sale=true" class="btn btn-primary" id="deals-shop-btn">Grab the Deal</a>
+          </div>
+          <div class="deals-timer" id="deals-timer">
+            <div class="timer-block"><span id="timer-h">08</span><label>Hours</label></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-block"><span id="timer-m">45</span><label>Mins</label></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-block"><span id="timer-s">00</span><label>Secs</label></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPAIR SERVICES -->
+    <section class="repair-section section" id="repair-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Expert Service</span>
+          <h2 class="section-title">Computer Repair Services</h2>
+          <p class="section-subtitle">Certified technicians. Quick turnaround. Transparent pricing.</p>
+        </div>
+        <div class="repair-grid">
+          <div class="repair-card" id="repair-hardware">
+            <div class="repair-icon">🖥️</div>
+            <h3>Hardware Repair</h3>
+            <p>Motherboard diagnosis, soldering, component-level repairs and upgrades.</p>
+            <span class="repair-price">Starting ₹499</span>
+            <a href="repair.html" class="btn btn-sm btn-outline">Book Now</a>
+          </div>
+          <div class="repair-card" id="repair-software">
+            <div class="repair-icon">💿</div>
+            <h3>OS &amp; Software</h3>
+            <p>Windows installation, driver setup, virus removal, data recovery.</p>
+            <span class="repair-price">Starting ₹299</span>
+            <a href="repair.html" class="btn btn-sm btn-outline">Book Now</a>
+          </div>
+          <div class="repair-card" id="repair-laptop">
+            <div class="repair-icon">💻</div>
+            <h3>Laptop Repair</h3>
+            <p>Screen replacement, keyboard, battery, charging port &amp; more.</p>
+            <span class="repair-price">Starting ₹699</span>
+            <a href="repair.html" class="btn btn-sm btn-outline">Book Now</a>
+          </div>
+          <div class="repair-card" id="repair-custom">
+            <div class="repair-icon">🔧</div>
+            <h3>Custom PC Build</h3>
+            <p>Let our experts assemble and test your dream PC.</p>
+            <span class="repair-price">Starting ₹999</span>
+            <a href="repair.html" class="btn btn-sm btn-outline">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What They Say</span>
+          <h2 class="section-title">Customer Reviews</h2>
+        </div>
+        <div class="testimonials-slider" id="testimonials-slider">
+          <div class="testimonial-card active">
+            <div class="stars">★★★★★</div>
+            <p>"Got my RTX 4090 delivered in 2 days. Packaging was immaculate and the price was better than anywhere else. TechNexus is my go-to now!"</p>
+            <div class="reviewer"><span class="reviewer-avatar">AR</span><span class="reviewer-name">Arjun Reddy, Hyderabad</span></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Brought my laptop in for a screen replacement. Ready in 3 hours! Super professional team, very transparent about pricing."</p>
+            <div class="reviewer"><span class="reviewer-avatar">PS</span><span class="reviewer-name">Priya Sharma, Bangalore</span></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★☆</div>
+            <p>"Great selection of RAM and SSD at competitive prices. Ordered DDR5 Corsair kit — arrived sealed and brand new. Will order again!"</p>
+            <div class="reviewer"><span class="reviewer-avatar">MK</span><span class="reviewer-name">Mohammed Khan, Mumbai</span></div>
+          </div>
+        </div>
+        <div class="slider-dots" id="slider-dots">
+          <button class="dot active" aria-label="Testimonial 1"></button>
+          <button class="dot" aria-label="Testimonial 2"></button>
+          <button class="dot" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BADGES -->
+    <section class="trust-section section" id="trust-section">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item"><div class="trust-icon">🛡️</div><h4>Genuine Products</h4><p>100% authentic, manufacturer sealed</p></div>
+          <div class="trust-item"><div class="trust-icon">🚚</div><h4>Fast Delivery</h4><p>Pan-India shipping in 2-4 days</p></div>
+          <div class="trust-item"><div class="trust-icon">↩️</div><h4>Easy Returns</h4><p>7-day hassle-free return policy</p></div>
+          <div class="trust-item"><div class="trust-icon">💳</div><h4>Secure Payments</h4><p>Paytm, UPI, Cards &amp; Net Banking</p></div>
+          <div class="trust-item"><div class="trust-icon">🏆</div><h4>Warranty</h4><p>Official brand warranty on all products</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+        <p>India's premium destination for computer components and professional repair services.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">in</a>
+          <a href="#" class="social-link" aria-label="Twitter">tw</a>
+          <a href="#" class="social-link" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?cat=cpu">Processors</a></li>
+          <li><a href="products.html?cat=gpu">Graphics Cards</a></li>
+          <li><a href="products.html?cat=ram">Memory</a></li>
+          <li><a href="products.html?cat=ssd">Storage</a></li>
+          <li><a href="products.html?cat=motherboard">Motherboards</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="repair.html">PC Repair</a></li>
+          <li><a href="repair.html">Laptop Repair</a></li>
+          <li><a href="repair.html">Custom Build</a></li>
+          <li><a href="repair.html">OS Installation</a></li>
+          <li><a href="repair.html">Data Recovery</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="policy.html">Return Policy</a></li>
+          <li><a href="policy.html">Privacy Policy</a></li>
+          <li><a href="policy.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>📍 42-B, Tech Street, Sector 5<br />Bangalore, Karnataka 560001</p>
+        <p>📞 +91-98765-43210</p>
+        <p>✉️ support@technexus.in</p>
+        <p>🕐 Mon–Sat: 9 AM – 7 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 TechNexus. All rights reserved.</p>
+      <div class="payment-icons">
+        <span class="pay-badge">Paytm</span>
+        <span class="pay-badge">UPI</span>
+        <span class="pay-badge">Visa</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">RuPay</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

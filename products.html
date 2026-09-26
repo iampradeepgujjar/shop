@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – TechNexus Computer Parts</title>
+  <meta name="description" content="Browse our full range of computer parts including CPUs, GPUs, RAM, SSDs, motherboards, coolers, and power supplies at best prices in India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/products.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top">
+      <div class="container">
+        <span>🚀 Free Shipping on orders above ₹2,999 &nbsp;|&nbsp; 📞 Support: +91-98765-43210</span>
+      </div>
+    </div>
+    <nav class="navbar container" role="navigation">
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <div class="nav-search">
+        <input type="search" id="nav-search-input" placeholder="Search components, brands…" aria-label="Search products" />
+        <button id="nav-search-btn" aria-label="Submit search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="repair.html">Repair</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="window.location='wishlist.html'" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="nav-icon-btn cart-btn" onclick="window.location='cart.html'" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1 id="page-title">All Products</h1>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span id="breadcrumb-cat">Products</span>
+    </div>
+  </section>
+
+  <main class="products-page container">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="filters-sidebar" id="filters-sidebar" aria-label="Product Filters">
+      <div class="filter-header">
+        <h3>Filters</h3>
+        <button class="filter-clear" id="clear-filters">Clear All</button>
+      </div>
+
+      <!-- Category -->
+      <div class="filter-group">
+        <h4>Category</h4>
+        <div class="filter-options" id="filter-category">
+          <label class="filter-opt"><input type="radio" name="cat" value="" checked /> All Products</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="cpu" /> Processors</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="gpu" /> Graphics Cards</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="ram" /> Memory (RAM)</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="ssd" /> Storage (SSD/HDD)</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="motherboard" /> Motherboards</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="cooler" /> Cooling</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="psu" /> Power Supplies</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="case" /> PC Cases</label>
+          <label class="filter-opt"><input type="radio" name="cat" value="repair" /> Repair Tools</label>
+        </div>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <div class="price-range">
+          <input type="range" id="price-range" min="0" max="200000" step="500" value="200000" class="range-slider" />
+          <div class="price-labels">
+            <span>₹0</span>
+            <span id="price-label">₹2,00,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand -->
+      <div class="filter-group">
+        <h4>Brand</h4>
+        <div class="filter-options" id="filter-brand">
+          <label class="filter-opt"><input type="checkbox" value="Intel" /> Intel</label>
+          <label class="filter-opt"><input type="checkbox" value="AMD" /> AMD</label>
+          <label class="filter-opt"><input type="checkbox" value="ASUS ROG" /> ASUS ROG</label>
+          <label class="filter-opt"><input type="checkbox" value="Corsair" /> Corsair</label>
+          <label class="filter-opt"><input type="checkbox" value="Samsung" /> Samsung</label>
+          <label class="filter-opt"><input type="checkbox" value="Noctua" /> Noctua</label>
+          <label class="filter-opt"><input type="checkbox" value="Lian Li" /> Lian Li</label>
+          <label class="filter-opt"><input type="checkbox" value="Kingston" /> Kingston</label>
+          <label class="filter-opt"><input type="checkbox" value="Western Digital" /> Western Digital</label>
+        </div>
+      </div>
+
+      <!-- Rating -->
+      <div class="filter-group">
+        <h4>Minimum Rating</h4>
+        <div class="filter-options">
+          <label class="filter-opt"><input type="radio" name="rating" value="" checked /> Any</label>
+          <label class="filter-opt"><input type="radio" name="rating" value="4.5" /> ★ 4.5+</label>
+          <label class="filter-opt"><input type="radio" name="rating" value="4" /> ★ 4.0+</label>
+          <label class="filter-opt"><input type="radio" name="rating" value="3.5" /> ★ 3.5+</label>
+        </div>
+      </div>
+
+      <!-- Availability -->
+      <div class="filter-group">
+        <h4>Availability</h4>
+        <label class="filter-opt"><input type="checkbox" id="in-stock-only" /> In Stock Only</label>
+        <label class="filter-opt"><input type="checkbox" id="sale-only" /> On Sale</label>
+      </div>
+    </aside>
+
+    <!-- PRODUCT LISTING -->
+    <div class="listing-area">
+      <div class="listing-toolbar">
+        <div class="results-info">
+          <span id="results-count">0 products</span>
+        </div>
+        <div class="toolbar-right">
+          <div class="sort-select-wrap">
+            <label for="sort-select">Sort:</label>
+            <select id="sort-select" class="sort-select">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+              <option value="discount">Biggest Discount</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </div>
+          <div class="view-toggle">
+            <button class="view-btn active" id="grid-view-btn" aria-label="Grid view">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </button>
+            <button class="view-btn" id="list-view-btn" aria-label="List view">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </button>
+          </div>
+          <!-- Mobile filter toggle -->
+          <button class="mobile-filter-btn" id="mobile-filter-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+            Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Active filters chips -->
+      <div class="active-filters" id="active-filters"></div>
+
+      <!-- Grid -->
+      <div class="products-grid" id="products-grid"></div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <div class="empty-icon">🔍</div>
+        <h3>No products found</h3>
+        <p>Try adjusting your filters or search query.</p>
+        <button class="btn btn-outline" onclick="clearAllFilters()">Clear Filters</button>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-bottom container">
+      <p>© 2026 TechNexus. All rights reserved.</p>
+      <div class="payment-icons">
+        <span class="pay-badge">Paytm</span><span class="pay-badge">UPI</span><span class="pay-badge">Visa</span><span class="pay-badge">Mastercard</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – TechNexus Computer Parts & Repair</title>
+  <meta name="description" content="Learn about TechNexus – India's trusted computer parts store and professional repair centre since 2015." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top"><div class="container"><span>🏆 Trusted by 50,000+ customers since 2015</span></div></div>
+    <nav class="navbar container">
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <div class="nav-search">
+        <input type="search" id="nav-search-input" placeholder="Search products…" />
+        <button id="nav-search-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="repair.html">Repair</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" onclick="window.location='wishlist.html'" aria-label="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="nav-icon-btn cart-btn" onclick="window.location='cart.html'" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>About TechNexus</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+  </section>
+
+  <main>
+    <!-- STORY -->
+    <section class="section container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;" id="story-layout">
+        <div>
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title" style="text-align:left;margin-top:0.75rem;">From Passion to India's Premier Tech Store</h2>
+          <p style="color:var(--clr-text-2);line-height:1.8;margin-bottom:1rem;">
+            TechNexus was founded in 2015 in Bangalore by a team of hardware enthusiasts who were frustrated with the lack of genuine, affordable computer components in India. We started in a small 200 sq.ft shop and have since grown to serve over 50,000 customers nationwide.
+          </p>
+          <p style="color:var(--clr-text-2);line-height:1.8;margin-bottom:1.5rem;">
+            Today, we offer 5,000+ genuine products from top brands including Intel, AMD, NVIDIA, Corsair, and more — with professional repair services, a dedicated support team, and pan-India shipping.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+          </div>
+        </div>
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-xl);padding:2.5rem;text-align:center;">
+          <div style="font-size:4rem;margin-bottom:1rem;">⚡</div>
+          <h3 style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--clr-white);margin-bottom:0.5rem;">Tech<span style="color:var(--clr-primary);">Nexus</span></h3>
+          <p style="color:var(--clr-text-2);font-size:0.9rem;margin-bottom:1.5rem;">Building India's PC community one component at a time.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center;">
+            <div style="padding:1rem;background:rgba(0,212,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(0,212,255,0.1);">
+              <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--clr-primary);">2015</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-2);">Founded</div>
+            </div>
+            <div style="padding:1rem;background:rgba(0,212,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(0,212,255,0.1);">
+              <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--clr-primary);">50K+</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-2);">Customers</div>
+            </div>
+            <div style="padding:1rem;background:rgba(0,212,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(0,212,255,0.1);">
+              <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--clr-primary);">5000+</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-2);">Products</div>
+            </div>
+            <div style="padding:1rem;background:rgba(0,212,255,0.05);border-radius:var(--radius-md);border:1px solid rgba(0,212,255,0.1);">
+              <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--clr-primary);">4.8★</div>
+              <div style="font-size:0.8rem;color:var(--clr-text-2);">Avg Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section" style="background:var(--clr-bg-2);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What Drives Us</span>
+          <h2 class="section-title">Our Core Values</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" id="values-grid">
+          <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:var(--spacing-xl);text-align:center;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--clr-primary)'" onmouseout="this.style.transform='';this.style.borderColor=''">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">🎯</div>
+            <h3 style="color:var(--clr-white);font-size:1.1rem;margin-bottom:0.5rem;">Authenticity</h3>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;line-height:1.7;">Every product is 100% genuine and sourced directly from official brand distributors. No fakes, ever.</p>
+          </div>
+          <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:var(--spacing-xl);text-align:center;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--clr-primary)'" onmouseout="this.style.transform='';this.style.borderColor=''">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">💡</div>
+            <h3 style="color:var(--clr-white);font-size:1.1rem;margin-bottom:0.5rem;">Expertise</h3>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;line-height:1.7;">Our team of certified technicians and hardware enthusiasts are always ready to help you make the right choice.</p>
+          </div>
+          <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:var(--spacing-xl);text-align:center;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--clr-primary)'" onmouseout="this.style.transform='';this.style.borderColor=''">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
+            <h3 style="color:var(--clr-white);font-size:1.1rem;margin-bottom:0.5rem;">Community</h3>
+            <p style="color:var(--clr-text-2);font-size:0.875rem;line-height:1.7;">We're more than a store — we're a community of builders, gamers, and tech lovers helping each other succeed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section container">
+      <div class="section-header">
+        <span class="section-tag">Meet the Team</span>
+        <h2 class="section-title">The People Behind TechNexus</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;" id="team-grid">
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="width:70px;height:70px;border-radius:50%;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem;color:#000;margin:0 auto 1rem;">VK</div>
+          <h4 style="color:var(--clr-white);font-size:1rem;">Vikram Kumar</h4>
+          <p style="color:var(--clr-primary);font-size:0.8rem;margin-bottom:0.5rem;">Founder &amp; CEO</p>
+          <p style="color:var(--clr-text-2);font-size:0.8rem;">15 years in the PC hardware industry.</p>
+        </div>
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="width:70px;height:70px;border-radius:50%;background:var(--grad-accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem;color:#fff;margin:0 auto 1rem;">PS</div>
+          <h4 style="color:var(--clr-white);font-size:1rem;">Priya Sharma</h4>
+          <p style="color:var(--clr-primary);font-size:0.8rem;margin-bottom:0.5rem;">Head of Repairs</p>
+          <p style="color:var(--clr-text-2);font-size:0.8rem;">Certified hardware technician, 10 years exp.</p>
+        </div>
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#10b981,#06b6d4);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem;color:#fff;margin:0 auto 1rem;">AR</div>
+          <h4 style="color:var(--clr-white);font-size:1rem;">Arun Reddy</h4>
+          <p style="color:var(--clr-primary);font-size:0.8rem;margin-bottom:0.5rem;">Product Manager</p>
+          <p style="color:var(--clr-text-2);font-size:0.8rem;">Curates our entire product catalogue.</p>
+        </div>
+        <div style="background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center;">
+          <div style="width:70px;height:70px;border-radius:50%;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem;color:#000;margin:0 auto 1rem;">MK</div>
+          <h4 style="color:var(--clr-white);font-size:1rem;">Meena Krishnan</h4>
+          <p style="color:var(--clr-primary);font-size:0.8rem;margin-bottom:0.5rem;">Customer Support</p>
+          <p style="color:var(--clr-text-2);font-size:0.8rem;">Ensuring every customer experience is ★★★★★.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+        <p>India's premium destination for computer components and professional repair services.</p>
+      </div>
+      <div class="footer-links"><h4>Shop</h4><ul><li><a href="products.html?cat=cpu">Processors</a></li><li><a href="products.html?cat=gpu">Graphics Cards</a></li><li><a href="products.html?cat=ram">Memory</a></li></ul></div>
+      <div class="footer-links"><h4>Help</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="policy.html">Return Policy</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact</h4><p>📞 +91-98765-43210</p><p>✉️ support@technexus.in</p></div>
+    </div>
+    <div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved.</p><div class="payment-icons"><span class="pay-badge">Paytm</span><span class="pay-badge">UPI</span><span class="pay-badge">Visa</span><span class="pay-badge">Mastercard</span></div></div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Cart.init();
+      if (window.innerWidth < 768) {
+        document.getElementById('story-layout').style.gridTemplateColumns = '1fr';
+        document.getElementById('values-grid').style.gridTemplateColumns = '1fr';
+        document.getElementById('team-grid').style.gridTemplateColumns = '1fr 1fr';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* ===== REPAIR PAGE STYLES ===== */
+
+/* Service Cards Grid */
+.repair-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+.service-card {
+  background: var(--grad-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex; flex-direction: column; gap: 0.75rem;
+  transition: all var(--ease-mid);
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad-primary); opacity: 0;
+  transition: opacity var(--ease-mid);
+}
+.service-card:hover {
+  border-color: var(--clr-border-2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.service-card:hover::before { opacity: 1; }
+.svc-icon { font-size: 2.2rem; }
+.service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--clr-white); }
+.service-card p  { font-size: 0.875rem; color: var(--clr-text-2); line-height: 1.6; }
+.svc-list { padding-left: 0; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.svc-list li {
+  font-size: 0.82rem; color: var(--clr-text-2);
+  padding-left: 1.2rem; position: relative;
+}
+.svc-list li::before {
+  content: '✓';
+  position: absolute; left: 0;
+  color: var(--clr-success); font-weight: 700;
+}
+.svc-price {
+  font-family: var(--font-head); font-weight: 700;
+  color: var(--clr-primary); font-size: 1rem;
+  margin-top: auto; padding-top: 0.5rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* Booking Section */
+.repair-booking-section { background: var(--clr-bg-2); }
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+.booking-perks { display: flex; flex-direction: column; gap: 1.25rem; }
+.perk {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.perk > span { font-size: 1.5rem; flex-shrink: 0; }
+.perk strong { color: var(--clr-white); font-size: 0.95rem; display: block; margin-bottom: 2px; }
+.perk p { color: var(--clr-text-2); font-size: 0.8rem; margin: 0; }
+
+/* Why Grid */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+.why-card {
+  text-align: center; padding: var(--spacing-xl);
+  background: var(--grad-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--ease-mid);
+}
+.why-card:hover { border-color: var(--clr-primary); transform: translateY(-4px); }
+.why-num {
+  font-family: var(--font-head);
+  font-size: 2.5rem; font-weight: 900;
+  background: var(--grad-primary);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.5rem;
+}
+.why-card h4 { color: var(--clr-white); font-size: 1rem; margin-bottom: 0.4rem; }
+.why-card p  { color: var(--clr-text-2); font-size: 0.85rem; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .repair-services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .booking-layout { grid-template-columns: 1fr; }
+  .repair-services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}

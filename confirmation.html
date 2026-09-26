@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed – TechNexus</title>
+  <meta name="description" content="Your TechNexus order has been placed successfully. Thank you for shopping with us!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-top"><div class="container"><span>🎉 Your order has been confirmed!</span></div></div>
+    <nav class="navbar container">
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <div style="flex:1"></div>
+      <a href="products.html" class="btn btn-outline btn-sm">Continue Shopping</a>
+    </nav>
+  </header>
+
+  <!-- CHECKOUT PROGRESS -->
+  <div class="checkout-progress container">
+    <div class="progress-step done"><div class="ps-num">✓</div><span>Cart</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step done"><div class="ps-num">✓</div><span>Address</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step done"><div class="ps-num">✓</div><span>Payment</span></div>
+    <div class="progress-line"></div>
+    <div class="progress-step active"><div class="ps-num">4</div><span>Confirm</span></div>
+  </div>
+
+  <main>
+    <div class="confirmation-page container" id="confirmation-page">
+      <div class="confirm-icon">✓</div>
+      <h1 class="confirm-title">Order Placed Successfully!</h1>
+      <p class="confirm-subtitle">Thank you for your purchase! We've received your order and will begin processing it shortly. A confirmation email will be sent to your inbox.</p>
+
+      <div class="order-id-badge" id="order-id-badge">Order ID: TN00000000</div>
+
+      <!-- Order Details Card -->
+      <div style="width:100%;max-width:680px;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);">
+        <h3 style="font-size:1rem;font-weight:700;color:var(--clr-white);margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">Order Details</h3>
+
+        <div id="confirmation-items" style="margin-bottom:1rem;"></div>
+
+        <div style="height:1px;background:var(--clr-border);margin:1rem 0;"></div>
+
+        <div id="confirmation-info" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.875rem;"></div>
+
+        <div style="height:1px;background:var(--clr-border);margin:1rem 0;"></div>
+
+        <div style="display:flex;justify-content:space-between;font-family:var(--font-head);font-size:1.1rem;font-weight:800;color:var(--clr-white);">
+          <span>Total Paid</span>
+          <span style="color:var(--clr-primary);" id="confirm-total">₹0</span>
+        </div>
+      </div>
+
+      <!-- Estimated Delivery -->
+      <div style="display:flex;align-items:center;gap:1rem;padding:1.25rem 2rem;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:var(--radius-lg);">
+        <span style="font-size:2rem;">🚚</span>
+        <div>
+          <div style="font-family:var(--font-head);font-weight:700;color:var(--clr-white);">Estimated Delivery</div>
+          <div style="color:var(--clr-success);font-weight:600;" id="delivery-date">–</div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+        <a href="products.html" class="btn btn-primary btn-lg">Continue Shopping</a>
+        <button class="btn btn-ghost btn-lg" onclick="window.print()">🖨 Print Receipt</button>
+        <a href="index.html" class="btn btn-ghost btn-lg">Go to Home</a>
+      </div>
+
+      <!-- Support -->
+      <div style="text-align:center;color:var(--clr-text-3);font-size:0.875rem;">
+        Have a question? Call us at <a href="tel:+919876543210" style="color:var(--clr-primary);">+91-98765-43210</a> or email <a href="mailto:support@technexus.in" style="color:var(--clr-primary);">support@technexus.in</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="margin-top:4rem;"><div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved.</p></div></footer>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Cart.init();
+      const order = JSON.parse(sessionStorage.getItem('tn_last_order') || '{}');
+
+      // Order ID
+      const idBadge = document.getElementById('order-id-badge');
+      if (idBadge && order.id) idBadge.textContent = `Order ID: ${order.id}`;
+
+      // Items
+      const items = JSON.parse(order.items || '[]');
+      const itemsEl = document.getElementById('confirmation-items');
+      if (itemsEl) {
+        itemsEl.innerHTML = items.map(item => {
+          const p = getProductById(item.id);
+          if (!p) return '';
+          return `
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--clr-border);">
+              <img src="${p.image}" alt="${p.name}" style="width:52px;height:52px;border-radius:8px;object-fit:cover;" loading="lazy" />
+              <div style="flex:1;">
+                <div style="font-size:0.875rem;font-weight:600;color:var(--clr-white);">${p.name}</div>
+                <div style="font-size:0.78rem;color:var(--clr-text-2);">Qty: ${item.qty} × ${formatCurrency(p.price)}</div>
+              </div>
+              <span style="font-weight:700;color:var(--clr-white);">${formatCurrency(p.price * item.qty)}</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Info grid
+      const infoEl = document.getElementById('confirmation-info');
+      const pmLabels = { paytm:'Paytm', upi:'UPI', card:'Card', netbanking:'Net Banking', cod:'Cash on Delivery' };
+      if (infoEl && order.name) {
+        infoEl.innerHTML = `
+          <div>
+            <div style="color:var(--clr-text-3);font-size:0.75rem;margin-bottom:4px;">CUSTOMER</div>
+            <div style="color:var(--clr-white);font-weight:600;">${order.name}</div>
+            <div style="color:var(--clr-text-2);">${order.email}</div>
+            <div style="color:var(--clr-text-2);">${order.phone}</div>
+          </div>
+          <div>
+            <div style="color:var(--clr-text-3);font-size:0.75rem;margin-bottom:4px;">SHIPPING TO</div>
+            <div style="color:var(--clr-text-2);line-height:1.6;">${order.address}</div>
+          </div>
+          <div>
+            <div style="color:var(--clr-text-3);font-size:0.75rem;margin-bottom:4px;">PAYMENT</div>
+            <div style="color:var(--clr-white);font-weight:600;">${pmLabels[order.payment] || order.payment}</div>
+          </div>
+          <div>
+            <div style="color:var(--clr-text-3);font-size:0.75rem;margin-bottom:4px;">ORDER DATE</div>
+            <div style="color:var(--clr-white);font-weight:600;">${order.date}</div>
+          </div>
+        `;
+      }
+
+      // Total
+      const totalEl = document.getElementById('confirm-total');
+      if (totalEl) totalEl.textContent = formatCurrency(parseInt(order.total || 0));
+
+      // Delivery date (4 business days)
+      const delivery = new Date();
+      delivery.setDate(delivery.getDate() + 4);
+      const deliveryEl = document.getElementById('delivery-date');
+      if (deliveryEl) deliveryEl.textContent = 'By ' + delivery.toLocaleDateString('en-IN', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
+      showToast('🎉 Order placed successfully!', 'success');
+    });
+  </script>
+</body>
+</html>
