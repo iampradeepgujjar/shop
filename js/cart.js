@@ -92,6 +92,13 @@ const Cart = (() => {
     return getWishlist().includes(productId);
   }
 
+  function clearWishlist() {
+    save(WISH_KEY, []);
+    updateWishBadge();
+    showToast('Wishlist cleared', 'info');
+    return [];
+  }
+
   function updateWishBadge() {
     const count = getWishlist().length;
     document.querySelectorAll('#wishlist-count').forEach(el => {
@@ -108,7 +115,7 @@ const Cart = (() => {
 
   return { getCart, addToCart, removeFromCart, updateQty, clearCart,
            getCartTotal, getCartCount, updateCartBadge,
-           getWishlist, toggleWishlist, isInWishlist, updateWishBadge, init };
+           getWishlist, toggleWishlist, clearWishlist, isInWishlist, updateWishBadge, init };
 })();
 
 /* ===================================================================

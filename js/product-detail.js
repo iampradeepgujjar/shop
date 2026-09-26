@@ -24,7 +24,7 @@ function loadProduct() {
 }
 
 function updateMeta() {
-  document.getElementById('meta-title').textContent = product.name + ' – TechNexus';
+  document.getElementById('meta-title').textContent = product.name + ' – DishaMail';
   document.getElementById('meta-desc').content = product.description;
   document.getElementById('bc-name').textContent = product.name;
 }
@@ -152,7 +152,12 @@ function renderProductDetail() {
     thumb.addEventListener('click', () => {
       document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
       thumb.classList.add('active');
-      // In real app, swap image source
+      const mainImg = document.getElementById('main-product-img');
+      const thumbImg = thumb.querySelector('img');
+      if (mainImg && thumbImg) {
+        mainImg.src = thumbImg.src;
+        mainImg.style.filter = thumbImg.style.filter || '';
+      }
     });
   });
 }

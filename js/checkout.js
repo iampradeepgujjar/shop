@@ -39,11 +39,18 @@ function renderCheckoutSummary() {
   }
 
   // Summary rows
-  const subtotal  = parseInt(sessionStorage.getItem('tn_order_subtotal') || Cart.getCartTotal());
-  const shipping  = parseInt(sessionStorage.getItem('tn_order_shipping') || (subtotal >= 2999 ? 0 : 149));
-  const tax       = parseInt(sessionStorage.getItem('tn_order_tax')      || Math.round(subtotal * 0.18));
-  const discount  = parseInt(sessionStorage.getItem('tn_order_discount') || 0);
-  const total     = subtotal - discount + shipping + tax;
+  const cartSubtotal = Cart.getCartTotal();
+  const storedSubtotal = sessionStorage.getItem('dm_order_subtotal') || sessionStorage.getItem('tn_order_subtotal');
+  const subtotal = cartSubtotal;
+  
+  let discount = parseInt(sessionStorage.getItem('dm_order_discount') || sessionStorage.getItem('tn_order_discount') || 0);
+  if (storedSubtotal && parseInt(storedSubtotal) !== cartSubtotal) {
+    discount = 0; // invalidate discount if cart changed
+  }
+
+  const shipping = subtotal >= 2999 ? 0 : 149;
+  const tax = Math.round((subtotal - discount) * 0.18);
+  const total = subtotal - discount + shipping + tax;
 
   const rows = document.getElementById('checkout-summary-rows');
   if (rows) {
@@ -56,6 +63,8 @@ function renderCheckoutSummary() {
   }
   const totalEl = document.getElementById('checkout-total');
   if (totalEl) totalEl.textContent = formatCurrency(total);
+  
+  sessionStorage.setItem('dm_order_final', total);
   sessionStorage.setItem('tn_order_final', total);
 }
 
@@ -116,7 +125,7 @@ function placeOrder() {
 
   // Save order data (payment is always Paytm)
   const orderData = {
-    id:      'TN' + Date.now().toString().slice(-8),
+    id:      'DM' + Date.now().toString().slice(-8),
     name:    (document.getElementById('first-name')?.value || '') + ' ' + (document.getElementById('last-name')?.value || ''),
     email:   document.getElementById('email')?.value || '',
     phone:   document.getElementById('phone')?.value || '',
@@ -129,10 +138,11 @@ function placeOrder() {
       'India'
     ].filter(Boolean).join(', '),
     payment: 'paytm',
-    total:   sessionStorage.getItem('tn_order_final') || '0',
+    total:   sessionStorage.getItem('dm_order_final') || sessionStorage.getItem('tn_order_final') || '0',
     date:    new Date().toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' }),
     items:   JSON.stringify(Cart.getCart()),
   };
+  sessionStorage.setItem('dm_last_order', JSON.stringify(orderData));
   sessionStorage.setItem('tn_last_order', JSON.stringify(orderData));
 
   // ----- PAYTM INTEGRATION POINT -----

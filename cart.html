@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cart – TechNexus</title>
-  <meta name="description" content="Review items in your TechNexus shopping cart before checkout." />
+  <title>Cart – DishaMail</title>
+  <meta name="description" content="Review items in your DishaMail shopping cart before checkout." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -14,9 +14,13 @@
 
   <!-- HEADER -->
   <header class="site-header scrolled" id="site-header">
-    <div class="header-top"><div class="container"><span>🚀 Free Shipping on orders above ₹2,999</span></div></div>
+    <div class="header-top">
+      <div class="container">
+        <span>🚀 Free Shipping on orders above ₹2,999 &nbsp;|&nbsp; 📞 Support: +91 8859452713</span>
+      </div>
+    </div>
     <nav class="navbar container">
-      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
       <div class="nav-search">
         <input type="search" id="nav-search-input" placeholder="Search products…" />
         <button id="nav-search-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
@@ -25,6 +29,8 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="repair.html">Repair</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <button class="nav-icon-btn" onclick="window.location='wishlist.html'" aria-label="Wishlist">
@@ -84,7 +90,7 @@
           <input type="text" id="coupon-input" class="form-control" placeholder="Enter coupon code" />
           <button class="btn btn-outline btn-sm" id="apply-coupon-btn" onclick="applyCoupon()">Apply</button>
         </div>
-        <p class="coupon-hint">Try: <code>SAVE10</code> or <code>NEXUS20</code></p>
+        <p class="coupon-hint">Try: <code>SAVE10</code> or <code>DISHAMAIL20</code></p>
       </div>
 
       <div class="summary-total">
@@ -120,7 +126,71 @@
     <div class="products-grid" id="related-grid"></div>
   </section>
 
-  <footer class="site-footer"><div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved.</p><div class="payment-icons"><span class="pay-badge">Paytm</span><span class="pay-badge">UPI</span><span class="pay-badge">Visa</span><span class="pay-badge">Mastercard</span></div></div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
+        <p>India's premium destination for computer components and professional repair services.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">in</a>
+          <a href="#" class="social-link" aria-label="Twitter">tw</a>
+          <a href="#" class="social-link" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html?cat=cpu">Processors</a></li>
+          <li><a href="products.html?cat=gpu">Graphics Cards</a></li>
+          <li><a href="products.html?cat=ram">Memory</a></li>
+          <li><a href="products.html?cat=ssd">Storage</a></li>
+          <li><a href="products.html?cat=motherboard">Motherboards</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="repair.html">PC Repair</a></li>
+          <li><a href="repair.html">Laptop Repair</a></li>
+          <li><a href="repair.html">Custom Build</a></li>
+          <li><a href="repair.html">OS Installation</a></li>
+          <li><a href="repair.html">Data Recovery</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Policies &amp; Help</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="return-policy.html">Return Policy</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>📍 Mohalla Hazrat nagar, Noorpur<br />Distt. Bijnor, Uttar Pradesh - 246734</p>
+        <p>📞 <a href="tel:+918859452713" style="color:inherit;">+91 8859452713</a></p>
+        <p>✉️ <a href="mailto:contact@dishamail.site" style="color:inherit;">contact@dishamail.site</a></p>
+        <p>🕐 Mon–Sat: 9 AM – 7 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 DishaMail. All rights reserved.</p>
+      <div class="payment-icons">
+        <span class="pay-badge">Paytm</span>
+        <span class="pay-badge">UPI</span>
+        <span class="pay-badge">Visa</span>
+        <span class="pay-badge">Mastercard</span>
+        <span class="pay-badge">RuPay</span>
+      </div>
+    </div>
+  </footer>
 
   <div class="toast-container" id="toast-container"></div>
   <div class="mobile-overlay" id="mobile-overlay"></div>

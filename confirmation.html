@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Confirmed – TechNexus</title>
-  <meta name="description" content="Your TechNexus order has been placed successfully. Thank you for shopping with us!" />
+  <title>Order Confirmed – DishaMail</title>
+  <meta name="description" content="Your DishaMail order has been placed successfully. Thank you for shopping with us!" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -16,7 +16,7 @@
   <header class="site-header scrolled" id="site-header">
     <div class="header-top"><div class="container"><span>🎉 Your order has been confirmed!</span></div></div>
     <nav class="navbar container">
-      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
       <div style="flex:1"></div>
       <a href="products.html" class="btn btn-outline btn-sm">Continue Shopping</a>
     </nav>
@@ -37,9 +37,9 @@
     <div class="confirmation-page container" id="confirmation-page">
       <div class="confirm-icon">✓</div>
       <h1 class="confirm-title">Order Placed Successfully!</h1>
-      <p class="confirm-subtitle">Thank you for your purchase! We've received your order and will begin processing it shortly. A confirmation email will be sent to your inbox.</p>
+      <p class="confirm-subtitle">Thank you for your purchase! We've received your order and will begin processing it shortly. A confirmation notification has been sent to your email.</p>
 
-      <div class="order-id-badge" id="order-id-badge">Order ID: TN00000000</div>
+      <div class="order-id-badge" id="order-id-badge">Order ID: DM00000000</div>
 
       <!-- Order Details Card -->
       <div style="width:100%;max-width:680px;background:var(--grad-surface);border:1px solid var(--clr-border);border-radius:var(--radius-xl);padding:var(--spacing-xl);">
@@ -77,12 +77,54 @@
 
       <!-- Support -->
       <div style="text-align:center;color:var(--clr-text-3);font-size:0.875rem;">
-        Have a question? Call us at <a href="tel:+919876543210" style="color:var(--clr-primary);">+91-98765-43210</a> or email <a href="mailto:support@technexus.in" style="color:var(--clr-primary);">support@technexus.in</a>
+        Have a question? Call us at <a href="tel:+918859452713" style="color:var(--clr-primary);">+91 8859452713</a> or email <a href="mailto:contact@dishamail.site" style="color:var(--clr-primary);">contact@dishamail.site</a>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer" style="margin-top:4rem;"><div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved.</p></div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer" style="margin-top:4rem;">
+    <div class="footer-grid container">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
+        <p>Premium electronics, authentic accessories, and certified repair services delivered pan-India.</p>
+        <p>📍 Mohalla Hazrat nagar, Noorpur<br />Distt. Bijnor, Uttar Pradesh - 246734</p>
+        <p>📞 <a href="tel:+918859452713" style="color:inherit;">+91 8859452713</a></p>
+        <p>✉️ <a href="mailto:contact@dishamail.site" style="color:inherit;">contact@dishamail.site</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="repair.html">Device Repair</a></li>
+          <li><a href="about.html">About DishaMail</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="wishlist.html">My Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="return-policy.html">Return Policy</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+          <li><a href="policy.html">All Policies Hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="contact.html#faq">FAQs &amp; Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 DishaMail. All rights reserved. All transactions secured by 256-bit SSL encryption.</p>
+    </div>
+  </footer>
 
   <div class="toast-container" id="toast-container"></div>
 
@@ -92,7 +134,13 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       Cart.init();
-      const order = JSON.parse(sessionStorage.getItem('tn_last_order') || '{}');
+      const rawOrder = sessionStorage.getItem('dm_last_order') || sessionStorage.getItem('tn_last_order');
+      if (!rawOrder) {
+        // If loaded directly without an order, redirect to home
+        window.location.href = 'index.html';
+        return;
+      }
+      const order = JSON.parse(rawOrder || '{}');
 
       // Order ID
       const idBadge = document.getElementById('order-id-badge');

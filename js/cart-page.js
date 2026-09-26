@@ -3,10 +3,12 @@
    =================================================================== */
 
 const COUPONS = {
-  'SAVE10':   { type: 'percent', value: 10, label: '10% OFF' },
-  'NEXUS20':  { type: 'percent', value: 20, label: '20% OFF' },
-  'FLAT500':  { type: 'flat',    value: 500, label: '₹500 OFF' },
-  'WELCOME':  { type: 'percent', value: 15, label: '15% OFF' },
+  'SAVE10':      { type: 'percent', value: 10, label: '10% OFF' },
+  'DISHAMAIL20': { type: 'percent', value: 20, label: '20% OFF' },
+  'DISHA10':     { type: 'percent', value: 10, label: '10% OFF' },
+  'NEXUS20':     { type: 'percent', value: 20, label: '20% OFF' },
+  'FLAT500':     { type: 'flat',    value: 500, label: '₹500 OFF' },
+  'WELCOME':     { type: 'percent', value: 15, label: '15% OFF' },
 };
 let appliedCoupon = null;
 
@@ -94,6 +96,11 @@ function renderOrderSummary(cart) {
   if (totalEl) totalEl.textContent = formatCurrency(total);
 
   // Store for checkout
+  sessionStorage.setItem('dm_order_total', total);
+  sessionStorage.setItem('dm_order_subtotal', subtotal);
+  sessionStorage.setItem('dm_order_shipping', shipping);
+  sessionStorage.setItem('dm_order_tax', tax);
+  sessionStorage.setItem('dm_order_discount', discount);
   sessionStorage.setItem('tn_order_total', total);
   sessionStorage.setItem('tn_order_subtotal', subtotal);
   sessionStorage.setItem('tn_order_shipping', shipping);

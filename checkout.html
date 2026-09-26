@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout – TechNexus</title>
-  <meta name="description" content="Complete your TechNexus order – enter your address and payment details." />
+  <title>Checkout – DishaMail</title>
+  <meta name="description" content="Complete your DishaMail order – enter your address and payment details." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
@@ -16,7 +16,7 @@
   <header class="site-header scrolled" id="site-header">
     <div class="header-top"><div class="container"><span>🔒 Secure Checkout – All transactions are encrypted</span></div></div>
     <nav class="navbar container">
-      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Tech<span class="accent">Nexus</span></span></a>
+      <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
       <div style="flex:1"></div>
       <div class="nav-actions">
         <button class="nav-icon-btn cart-btn" onclick="window.location='cart.html'" aria-label="Back to Cart">
@@ -94,7 +94,7 @@
           </div>
           <div class="form-group">
             <label for="city">City *</label>
-            <input type="text" id="city" name="city" class="form-control" placeholder="Bangalore" required autocomplete="address-level2" />
+            <input type="text" id="city" name="city" class="form-control" placeholder="Bijnor / New Delhi" required autocomplete="address-level2" />
             <span class="form-error" id="err-city"></span>
           </div>
           <div class="form-group">
@@ -104,19 +104,19 @@
               <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
               <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option>
               <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
-              <option>Jharkhand</option><option selected>Karnataka</option><option>Kerala</option>
+              <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
               <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
               <option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
               <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
               <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
-              <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+              <option>Tripura</option><option selected>Uttar Pradesh</option><option>Uttarakhand</option>
               <option>West Bengal</option><option>Delhi</option>
             </select>
             <span class="form-error" id="err-state"></span>
           </div>
           <div class="form-group">
             <label for="pincode">PIN Code *</label>
-            <input type="text" id="pincode" name="pincode" class="form-control" placeholder="560001" required maxlength="6" pattern="\d{6}" autocomplete="postal-code" />
+            <input type="text" id="pincode" name="pincode" class="form-control" placeholder="246734" required maxlength="6" pattern="\d{6}" autocomplete="postal-code" />
             <span class="form-error" id="err-pincode"></span>
           </div>
           <div class="form-group">
@@ -201,7 +201,7 @@
         🔒 Place Order & Pay Securely
       </button>
       <p style="text-align:center;font-size:0.8rem;color:var(--clr-text-3);margin-top:0.5rem;">
-        By placing your order you agree to our <a href="policy.html" style="color:var(--clr-primary)">Terms &amp; Conditions</a>.
+        By placing your order you agree to our <a href="terms.html" style="color:var(--clr-primary)">Terms &amp; Conditions</a> and <a href="return-policy.html" style="color:var(--clr-primary)">Return Policy</a>.
       </p>
     </div>
 
@@ -237,7 +237,49 @@
 
   </main>
 
-  <footer class="site-footer"><div class="footer-bottom container"><p>© 2026 TechNexus. All rights reserved. All transactions secured by SSL.</p></div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid container">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><div class="logo-icon">⚡</div><span class="logo-text">Disha<span class="accent">Mail</span></span></a>
+        <p>Premium electronics, authentic accessories, and certified repair services delivered pan-India.</p>
+        <p>📍 Mohalla Hazrat nagar, Noorpur<br />Distt. Bijnor, Uttar Pradesh - 246734</p>
+        <p>📞 <a href="tel:+918859452713" style="color:inherit;">+91 8859452713</a></p>
+        <p>✉️ <a href="mailto:contact@dishamail.site" style="color:inherit;">contact@dishamail.site</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="repair.html">Device Repair</a></li>
+          <li><a href="about.html">About DishaMail</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="wishlist.html">My Wishlist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="return-policy.html">Return Policy</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+          <li><a href="policy.html">All Policies Hub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="contact.html#faq">FAQs &amp; Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 DishaMail. All rights reserved. All transactions secured by 256-bit SSL encryption.</p>
+    </div>
+  </footer>
 
   <div class="toast-container" id="toast-container"></div>
 

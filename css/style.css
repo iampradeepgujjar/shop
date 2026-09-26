@@ -1,5 +1,5 @@
 /* ============================================
-   TechNexus – Global Stylesheet
+   DishaMail – Global Stylesheet
    ============================================ */
 
 /* --- Google Font & CSS Variables --- */
@@ -717,6 +717,168 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
 .form-control.error { border-color: var(--clr-error); }
 .form-error { font-size: 0.8rem; color: var(--clr-error); margin-top: 4px; }
 select.form-control { appearance: none; cursor: pointer; }
+
+/* ===== POLICY & LEGAL PAGES ===== */
+.policy-page {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-3xl);
+}
+.policy-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--spacing-2xl);
+  align-items: start;
+}
+.policy-sidebar {
+  position: sticky;
+  top: 90px;
+  background: var(--grad-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.policy-sidebar-title {
+  font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-3);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 4px;
+}
+.policy-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  color: var(--clr-text-2);
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--ease-fast);
+}
+.policy-sidebar-link:hover {
+  color: var(--clr-primary);
+  background: rgba(0,212,255,0.06);
+}
+.policy-sidebar-link.active {
+  color: var(--clr-primary);
+  background: rgba(0,212,255,0.12);
+  border-left: 3px solid var(--clr-primary);
+  font-weight: 700;
+}
+.policy-content-card {
+  background: var(--grad-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-card);
+}
+.policy-header {
+  border-bottom: 1px solid var(--clr-border);
+  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+.policy-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--clr-text-3);
+  margin-top: 0.5rem;
+}
+.policy-body {
+  color: var(--clr-text-2);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.policy-body h2 {
+  font-size: 1.35rem;
+  color: var(--clr-white);
+  margin: 1.75rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.policy-body h3 {
+  font-size: 1.1rem;
+  color: var(--clr-white);
+  margin: 1.25rem 0 0.5rem;
+}
+.policy-body p {
+  margin-bottom: 1rem;
+}
+.policy-body ul, .policy-body ol {
+  margin: 0.5rem 0 1.25rem 1.25rem;
+}
+.policy-body li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+.policy-callout {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  margin: 1.5rem 0;
+  border: 1px solid var(--clr-border);
+}
+.policy-callout.info {
+  background: rgba(0,212,255,0.06);
+  border-color: rgba(0,212,255,0.25);
+  color: var(--clr-text);
+}
+.policy-callout.warning {
+  background: rgba(245,158,11,0.08);
+  border-color: rgba(245,158,11,0.3);
+  color: var(--clr-text);
+}
+.policy-callout.success {
+  background: rgba(16,185,129,0.08);
+  border-color: rgba(16,185,129,0.3);
+  color: var(--clr-text);
+}
+.policy-callout strong {
+  color: var(--clr-white);
+}
+.policy-contact-box {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border-2);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.policy-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.policy-contact-item span {
+  font-size: 1.4rem;
+}
+.policy-contact-item h4 {
+  font-size: 0.85rem;
+  color: var(--clr-white);
+  margin-bottom: 4px;
+}
+.policy-contact-item p {
+  font-size: 0.85rem;
+  color: var(--clr-text-2);
+  margin: 0;
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .policy-layout { grid-template-columns: 1fr; }
+  .policy-sidebar { position: static; }
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1100px) {

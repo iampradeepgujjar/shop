@@ -43,7 +43,8 @@ function updateBreadcrumb(cat) {
   const catNames = {
     cpu:'Processors', gpu:'Graphics Cards', ram:'Memory',
     ssd:'Storage', motherboard:'Motherboards', cooler:'Cooling',
-    psu:'Power Supplies', case:'PC Cases', repair:'Repair Tools'
+    psu:'Power Supplies', case:'PC Cases', repair:'Repair Tools & Parts',
+    accessories:'Accessories & Hubs'
   };
   const bc  = document.getElementById('breadcrumb-cat');
   const ttl = document.getElementById('page-title');
