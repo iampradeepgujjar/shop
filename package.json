@@ -3,7 +3,6 @@
   "version": "2.0.0",
   "description": "DishaMail - Premium Computer Parts & Repair Store with Cashfree Payment Gateway",
   "scripts": {
-    "build": "echo 'Build ready'",
     "start": "node local-server.js",
     "dev": "node local-server.js"
   },
@@ -15,7 +14,7 @@
   ],
   "author": "DishaMail",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
