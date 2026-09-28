@@ -187,7 +187,17 @@ async function placeOrder() {
       })
     });
 
-    const data = await res.json();
+    let data;
+    const contentType = res.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      data = await res.json();
+    } else {
+      const rawText = await res.text();
+      if (res.status === 404 || res.status === 405) {
+        throw new Error('Payment API (/api/create-order) is not available on this static domain. Please open your live Vercel URL where the backend is hosted.');
+      }
+      throw new Error(`Server returned an unexpected response (${res.status}).`);
+    }
 
     if (!res.ok || !data.success || !data.payment_session_id) {
       throw new Error(data.message || 'Unable to initialize Cashfree payment session.');
