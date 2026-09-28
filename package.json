@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "DishaMail - Premium Computer Parts & Repair Store with Cashfree Payment Gateway",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node local-server.js",
+    "dev": "node local-server.js"
   },
   "keywords": [
     "ecommerce",
