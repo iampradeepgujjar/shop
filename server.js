@@ -37,6 +37,20 @@ app.get('/api/health', (req, res) => {
 // Serve static frontend files from current directory
 app.use(express.static(path.join(__dirname)));
 
+// Root handler
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Clean and HTML page routing fallback
+app.get('/:page', (req, res, next) => {
+  if (req.params.page.startsWith('api')) return next();
+  const pageFile = req.params.page.endsWith('.html') ? req.params.page : `${req.params.page}.html`;
+  res.sendFile(path.join(__dirname, pageFile), err => {
+    if (err) next();
+  });
+});
+
 // Start server
 app.listen(PORT, () => {
   const env = (process.env.CASHFREE_ENV || 'production').toUpperCase();
