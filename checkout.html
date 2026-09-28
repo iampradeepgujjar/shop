@@ -148,47 +148,37 @@
         <h3><span>💳</span> Payment Method</h3>
 
         <!-- Hidden fixed value: online payment gateway -->
-        <input type="hidden" name="payment" value="online" id="pm-payment" />
+        <input type="hidden" name="payment" value="cashfree" id="pm-payment" />
 
-        <!-- Secure Payment Gateway Card -->
+        <!-- Secure Cashfree Payment Gateway Card -->
         <div class="payment-gateway-card">
           <div class="payment-gateway-header">
             <div class="gateway-title-wrap">
               <span class="gateway-icon">🔒</span>
               <div>
-                <div class="gateway-title">Secure Online Payment Gateway</div>
+                <div class="gateway-title">Cashfree Payments</div>
                 <div class="gateway-subtitle">Instant &amp; Automated Verification</div>
               </div>
             </div>
-            <span class="pm-badge">100% Encrypted</span>
+            <span class="pm-badge" style="background:rgba(16,185,129,0.15);color:var(--clr-success);border:1px solid rgba(16,185,129,0.3);">Cashfree Verified</span>
           </div>
 
           <p class="payment-gateway-desc">
-            You will be securely redirected to the payment gateway to complete your transaction.
+            You will be securely redirected to <strong>Cashfree Payment Gateway</strong> to complete your transaction.
             All major payment modes are supported: <strong>UPI (Google Pay, PhonePe, Paytm, BHIM)</strong>,
             <strong>Credit &amp; Debit Cards (Visa, Mastercard, RuPay)</strong>,
             <strong>Net Banking (50+ Banks)</strong>, and <strong>Digital Wallets</strong>.
           </p>
 
           <div class="payment-features">
-            <div class="payment-feature"><span>📱</span> UPI / QR</div>
-            <div class="payment-feature"><span>💳</span> Credit &amp; Debit Cards</div>
-            <div class="payment-feature"><span>🏦</span> Net Banking</div>
-            <div class="payment-feature"><span>👛</span> Wallets</div>
+            <div class="payment-feature"><span>📱</span> UPI (GPay / PhonePe)</div>
+            <div class="payment-feature"><span>💳</span> Debit &amp; Credit Cards</div>
+            <div class="payment-feature"><span>🏦</span> 50+ Net Banking</div>
+            <div class="payment-feature"><span>👛</span> Popular Wallets</div>
           </div>
 
           <div class="payment-security-note">
-            🔒 &nbsp;256-bit SSL encrypted. Your payment details are processed through PCI-DSS compliant channels and never stored on our servers.
-          </div>
-
-          <div class="payment-dev-note">
-            <div class="payment-dev-label">Payment Gateway Integration</div>
-            <code>
-              Endpoint: Standard Hosted Checkout / Payment Aggregator<br/>
-              Channels: UPI (Intent &amp; Collect), Cards, Net Banking, Wallets<br/>
-              Security: 256-bit SSL / PCI-DSS Level 1 Compliant<br/>
-              Mode: Production Ready
-            </code>
+            🔒 &nbsp;256-bit SSL encrypted. Powered by Cashfree Payments (RBI authorized Payment Aggregator). Your financial data is never stored on our servers.
           </div>
         </div>
       </div>
@@ -313,6 +303,8 @@
   <script src="js/data.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
+  <!-- Cashfree Payment Gateway SDK v3 -->
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
   <script src="js/checkout.js"></script>
 </body>
 </html>

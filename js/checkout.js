@@ -113,58 +113,112 @@ function validateForm() {
   return valid;
 }
 
-/* ---- Place Order ---- */
-function placeOrder() {
+/* ---- Place Order with Cashfree Payment Gateway ---- */
+async function placeOrder() {
   if (!validateForm()) {
     showToast('Please fill all required fields', 'error');
-    // Scroll to first error
     const firstErr = document.querySelector('.form-control.error');
     if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
-  // Save order data (payment via secure online payment gateway)
+  const btn = document.getElementById('place-order-btn');
+  const originalBtnHTML = btn ? btn.innerHTML : '🔒 Place Order & Pay Securely';
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="btn-loader"></span> Connecting to Cashfree…';
+    btn.style.opacity = '0.85';
+  }
+
+  const orderId = 'DM' + Date.now().toString().slice(-8);
+  const totalAmount = parseFloat(sessionStorage.getItem('dm_order_final') || sessionStorage.getItem('tn_order_final') || '0');
+
+  const customerName = ((document.getElementById('first-name')?.value || '') + ' ' + (document.getElementById('last-name')?.value || '')).trim();
+  const customerEmail = (document.getElementById('email')?.value || '').trim();
+  const customerPhone = (document.getElementById('phone')?.value || '').trim();
+  const orderNotes = (document.getElementById('order-notes')?.value || '').trim();
+
+  const fullAddress = [
+    document.getElementById('address-line1')?.value,
+    document.getElementById('address-line2')?.value,
+    document.getElementById('city')?.value,
+    document.getElementById('state')?.value,
+    document.getElementById('pincode')?.value,
+    'India'
+  ].filter(Boolean).join(', ');
+
   const orderData = {
-    id:      'DM' + Date.now().toString().slice(-8),
-    name:    (document.getElementById('first-name')?.value || '') + ' ' + (document.getElementById('last-name')?.value || ''),
-    email:   document.getElementById('email')?.value || '',
-    phone:   document.getElementById('phone')?.value || '',
-    address: [
-      document.getElementById('address-line1')?.value,
-      document.getElementById('address-line2')?.value,
-      document.getElementById('city')?.value,
-      document.getElementById('state')?.value,
-      document.getElementById('pincode')?.value,
-      'India'
-    ].filter(Boolean).join(', '),
-    payment: 'online',
-    total:   sessionStorage.getItem('dm_order_final') || sessionStorage.getItem('tn_order_final') || '0',
+    id:      orderId,
+    name:    customerName,
+    email:   customerEmail,
+    phone:   customerPhone,
+    address: fullAddress,
+    payment: 'cashfree',
+    total:   totalAmount,
     date:    new Date().toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' }),
     items:   JSON.stringify(Cart.getCart()),
   };
+
+  // Stash order data in sessionStorage before redirect
+  sessionStorage.setItem('dm_pending_order', JSON.stringify(orderData));
   sessionStorage.setItem('dm_last_order', JSON.stringify(orderData));
   sessionStorage.setItem('tn_last_order', JSON.stringify(orderData));
 
-  // ----- PAYMENT GATEWAY INTEGRATION POINT -----
-  // 1. Call your backend: POST /api/payment/createOrder → { orderId, amount, currency }
-  // 2. Invoke client-side checkout SDK (Razorpay, Cashfree, PhonePe, Paytm, or Stripe)
-  // 3. Handle payment response, verify signature, and redirect to confirmation
+  // Determine return URL
+  const returnUrl = `${window.location.origin}/confirmation.html?order_id={order_id}`;
 
-  simulatePayment();
-}
+  // Determine API endpoint (supports local server, Vercel, or external backend when on GitHub Pages)
+  const API_BASE_URL = window.CASHFREE_API_BASE || '';
 
-/* ---- Simulate payment & redirect ---- */
-function simulatePayment() {
-  const btn = document.getElementById('place-order-btn');
-  if (btn) {
-    btn.disabled = true;
-    btn.innerHTML = '<span class="btn-loader"></span> Processing…';
-    btn.style.opacity = '0.8';
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/create-order`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        order_id: orderId,
+        order_amount: totalAmount,
+        customer_name: customerName,
+        customer_email: customerEmail,
+        customer_phone: customerPhone,
+        order_note: orderNotes,
+        return_url: returnUrl
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.success || !data.payment_session_id) {
+      throw new Error(data.message || 'Unable to initialize Cashfree payment session.');
+    }
+
+    if (btn) {
+      btn.innerHTML = '<span class="btn-loader"></span> Launching Cashfree Gateway…';
+    }
+
+    // Verify Cashfree SDK is loaded
+    if (typeof Cashfree === 'undefined') {
+      throw new Error('Cashfree SDK is not available. Please verify internet connectivity.');
+    }
+
+    const cashfree = Cashfree({
+      mode: (data.env || 'production').toLowerCase() === 'sandbox' ? 'sandbox' : 'production'
+    });
+
+    // Launch Cashfree Checkout
+    cashfree.checkout({
+      paymentSessionId: data.payment_session_id,
+      redirectTarget: '_self'
+    });
+
+  } catch (err) {
+    console.error('[Cashfree Checkout Error]', err);
+    showToast(err.message || 'Payment initiation failed. Please try again.', 'error');
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnHTML;
+      btn.style.opacity = '1';
+    }
   }
-
-  // Simulate async payment
-  setTimeout(() => {
-    Cart.clearCart();
-    window.location.href = 'confirmation.html';
-  }, 2000);
 }
