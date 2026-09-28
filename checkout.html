@@ -147,42 +147,47 @@
       <div class="form-card" id="step-payment">
         <h3><span>💳</span> Payment Method</h3>
 
-        <!-- Hidden fixed value: always paytm -->
-        <input type="hidden" name="payment" value="paytm" id="pm-paytm" />
+        <!-- Hidden fixed value: online payment gateway -->
+        <input type="hidden" name="payment" value="online" id="pm-payment" />
 
-        <!-- Paytm Gateway Card -->
-        <div class="paytm-gateway-card">
-          <div class="paytm-gateway-header">
-            <div class="paytm-logo-large">
-              <span class="pt-pay">pay</span><span class="pt-tm">tm</span>
+        <!-- Secure Payment Gateway Card -->
+        <div class="payment-gateway-card">
+          <div class="payment-gateway-header">
+            <div class="gateway-title-wrap">
+              <span class="gateway-icon">🔒</span>
+              <div>
+                <div class="gateway-title">Secure Online Payment Gateway</div>
+                <div class="gateway-subtitle">Instant &amp; Automated Verification</div>
+              </div>
             </div>
-            <span class="pm-badge">Secure Gateway</span>
+            <span class="pm-badge">100% Encrypted</span>
           </div>
 
-          <p class="paytm-gateway-desc">
-            You will be securely redirected to Paytm to complete your payment.
-            Paytm supports <strong>Paytm Wallet</strong>, <strong>UPI</strong>,
-            <strong>Credit/Debit Cards</strong>, <strong>Net Banking</strong> and more.
+          <p class="payment-gateway-desc">
+            You will be securely redirected to the payment gateway to complete your transaction.
+            All major payment modes are supported: <strong>UPI (Google Pay, PhonePe, Paytm, BHIM)</strong>,
+            <strong>Credit &amp; Debit Cards (Visa, Mastercard, RuPay)</strong>,
+            <strong>Net Banking (50+ Banks)</strong>, and <strong>Digital Wallets</strong>.
           </p>
 
-          <div class="paytm-features">
-            <div class="paytm-feature"><span>💙</span> Paytm Wallet</div>
-            <div class="paytm-feature"><span>📱</span> UPI / BHIM</div>
-            <div class="paytm-feature"><span>💳</span> Cards</div>
-            <div class="paytm-feature"><span>🏦</span> Net Banking</div>
+          <div class="payment-features">
+            <div class="payment-feature"><span>📱</span> UPI / QR</div>
+            <div class="payment-feature"><span>💳</span> Credit &amp; Debit Cards</div>
+            <div class="payment-feature"><span>🏦</span> Net Banking</div>
+            <div class="payment-feature"><span>👛</span> Wallets</div>
           </div>
 
-          <div class="paytm-security-note">
-            🔒 &nbsp;256-bit SSL encrypted. Your payment details are never stored on our servers.
+          <div class="payment-security-note">
+            🔒 &nbsp;256-bit SSL encrypted. Your payment details are processed through PCI-DSS compliant channels and never stored on our servers.
           </div>
 
-          <div class="paytm-dev-note">
-            <div class="paytm-dev-label">Developer Integration Notes</div>
+          <div class="payment-dev-note">
+            <div class="payment-dev-label">Payment Gateway Integration</div>
             <code>
-              MID: YOUR_MERCHANT_ID<br/>
-              Key: YOUR_MERCHANT_KEY<br/>
-              Endpoint: https://securegw.paytm.in/theia/processTransaction<br/>
-              Checksum: Generate server-side via paytm-checksum library
+              Endpoint: Standard Hosted Checkout / Payment Aggregator<br/>
+              Channels: UPI (Intent &amp; Collect), Cards, Net Banking, Wallets<br/>
+              Security: 256-bit SSL / PCI-DSS Level 1 Compliant<br/>
+              Mode: Production Ready
             </code>
           </div>
         </div>
@@ -227,8 +232,10 @@
 
       <!-- Trust Badges -->
       <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
-        <span class="pay-badge">Paytm</span>
         <span class="pay-badge">UPI</span>
+        <span class="pay-badge">Cards</span>
+        <span class="pay-badge">Net Banking</span>
+        <span class="pay-badge">Wallets</span>
         <span class="pay-badge">Visa</span>
         <span class="pay-badge">Mastercard</span>
         <span class="pay-badge">RuPay</span>

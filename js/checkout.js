@@ -123,7 +123,7 @@ function placeOrder() {
     return;
   }
 
-  // Save order data (payment is always Paytm)
+  // Save order data (payment via secure online payment gateway)
   const orderData = {
     id:      'DM' + Date.now().toString().slice(-8),
     name:    (document.getElementById('first-name')?.value || '') + ' ' + (document.getElementById('last-name')?.value || ''),
@@ -137,7 +137,7 @@ function placeOrder() {
       document.getElementById('pincode')?.value,
       'India'
     ].filter(Boolean).join(', '),
-    payment: 'paytm',
+    payment: 'online',
     total:   sessionStorage.getItem('dm_order_final') || sessionStorage.getItem('tn_order_final') || '0',
     date:    new Date().toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' }),
     items:   JSON.stringify(Cart.getCart()),
@@ -145,12 +145,10 @@ function placeOrder() {
   sessionStorage.setItem('dm_last_order', JSON.stringify(orderData));
   sessionStorage.setItem('tn_last_order', JSON.stringify(orderData));
 
-  // ----- PAYTM INTEGRATION POINT -----
-  // 1. Call your backend: POST /api/paytm/initiateTransaction → { txnToken }
-  // 2. Add script: <script src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/{MID}.js">
-  // 3. window.Paytm.CheckoutJS.init({ root:"", flow:"DEFAULT", data:{ orderId, token:txnToken,
-  //    tokenType:"TXN_TOKEN", amount: orderData.total }, merchant:{ mid:"YOUR_MID", redirect:true }
-  //    }).then(() => window.Paytm.CheckoutJS.invoke());
+  // ----- PAYMENT GATEWAY INTEGRATION POINT -----
+  // 1. Call your backend: POST /api/payment/createOrder → { orderId, amount, currency }
+  // 2. Invoke client-side checkout SDK (Razorpay, Cashfree, PhonePe, Paytm, or Stripe)
+  // 3. Handle payment response, verify signature, and redirect to confirmation
 
   simulatePayment();
 }
