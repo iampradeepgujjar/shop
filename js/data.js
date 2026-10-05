@@ -4,6 +4,25 @@
 
 const PRODUCTS = [
   {
+    id: 17,
+    name: "Dell KB216 Wired Multimedia Desktop Keyboard",
+    brand: "Dell",
+    category: "accessories",
+    price: 449,
+    mrp: 999,
+    image: "assets/images/product_keyboard.jpg",
+    rating: 4.6,
+    reviews: 2850,
+    badge: "hot",
+    socialProof: "100+ customers added this to cart",
+    pinned: true,
+    stock: 75,
+    description: "Comfortable full-sized desktop keyboard with low-profile chiclet keys, spill-resistant design, dedicated multimedia shortcut keys, and quiet tactile feedback for home and office use.",
+    specs: { "Form Factor": "Full-Size 104 Keys with Numpad", "Key Switch Type": "Chiclet / Membrane", Connectivity: "Wired USB 2.0 (1.5m Cable)", "Multimedia Keys": "Volume Mute/Down/Up, Play/Pause", "Spill Resistance": "Yes, drainage channels", Dimensions: "442 × 127 × 24 mm" },
+    featured: true,
+    sale: true
+  },
+  {
     id: 15,
     name: "CR2032 3V Lithium CMOS Battery with 2-Pin Cable & RTC Module",
     brand: "Maxell",
@@ -34,23 +53,6 @@ const PRODUCTS = [
     stock: 80,
     description: "Heavy-duty 65cm replacement power button and reset switch cable harness with bright LED activity indicators (Power LED + HDD LED) and standard 2-pin motherboard headers.",
     specs: { "Cable Length": "65 cm (25.6 inches)", Switches: "Power SW, Reset SW", "LED Indicators": "Power LED (+/-), HDD LED (+/-)", "Header Type": "Standard 2.54mm pitch 2-Pin", "Wire Gauge": "24 AWG Ribbon", Installation: "Toolless Plug & Play" },
-    featured: true,
-    sale: true
-  },
-  {
-    id: 17,
-    name: "Dell KB216 Wired Multimedia Desktop Keyboard",
-    brand: "Dell",
-    category: "accessories",
-    price: 599,
-    mrp: 999,
-    image: "assets/images/product_keyboard.jpg",
-    rating: 4.6,
-    reviews: 2850,
-    badge: null,
-    stock: 75,
-    description: "Comfortable full-sized desktop keyboard with low-profile chiclet keys, spill-resistant design, dedicated multimedia shortcut keys, and quiet tactile feedback for home and office use.",
-    specs: { "Form Factor": "Full-Size 104 Keys with Numpad", "Key Switch Type": "Chiclet / Membrane", Connectivity: "Wired USB 2.0 (1.5m Cable)", "Multimedia Keys": "Volume Mute/Down/Up, Play/Pause", "Spill Resistance": "Yes, drainage channels", Dimensions: "442 × 127 × 24 mm" },
     featured: true,
     sale: true
   },

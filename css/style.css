@@ -500,9 +500,24 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-head); line-height: 1.2; }
   gap: 4px;
   font-size: 0.8rem;
   color: var(--clr-gold);
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 .product-rating span { color: var(--clr-text-3); }
+
+.product-social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
 
 .product-price-row {
   display: flex;

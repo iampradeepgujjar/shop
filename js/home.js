@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
 });
 
-/* ---- Products: Price Low to High (Total 8) ---- */
+/* ---- Products: Pinned 1st, then Price Low to High (Total 8) ---- */
 function renderFeatured() {
   const grid = document.getElementById('featured-grid');
   if (!grid) return;
-  const products = [...PRODUCTS]
-    .sort((a, b) => a.price - b.price)
-    .slice(0, 8);
+  const pinned = PRODUCTS.filter(p => p.pinned);
+  const others = PRODUCTS.filter(p => !p.pinned).sort((a, b) => a.price - b.price);
+  const products = [...pinned, ...others].slice(0, 8);
   grid.innerHTML = products.map(buildProductCard).join('');
 }
 

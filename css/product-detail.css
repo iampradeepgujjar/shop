@@ -102,6 +102,20 @@
 .pd-stars { color: var(--clr-gold); font-size: 1.1rem; }
 .pd-review-count { color: var(--clr-text-2); }
 
+.pd-social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-md);
+  padding: 6px 14px;
+  width: fit-content;
+}
+
 /* Price */
 .pd-price-section {
   padding: 1.25rem;

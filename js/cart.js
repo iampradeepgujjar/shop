@@ -147,6 +147,8 @@ function buildProductCard(product) {
     : '';
   const stockHTML = product.stock <= 5
     ? `<span class="product-badge badge-stock">Only ${product.stock} left!</span>` : '';
+  const socialHTML = product.socialProof
+    ? `<div class="product-social-proof">🛒 ${product.socialProof}</div>` : '';
 
   return `
     <div class="product-card" data-id="${product.id}">
@@ -178,6 +180,7 @@ function buildProductCard(product) {
           ${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5-Math.round(product.rating))}
           <span>(${product.reviews})</span>
         </div>
+        ${socialHTML}
         <div class="product-price-row">
           <span class="product-price">${formatCurrency(product.price)}</span>
           ${product.mrp > product.price ? `<span class="product-mrp">${formatCurrency(product.mrp)}</span>` : ''}

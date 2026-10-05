@@ -94,7 +94,7 @@ function sortProducts() {
     case 'rating':     filteredProducts.sort((a,b) => b.rating - a.rating); break;
     case 'discount':   filteredProducts.sort((a,b) => discountPct(b.price,b.mrp) - discountPct(a.price,a.mrp)); break;
     case 'name':       filteredProducts.sort((a,b) => a.name.localeCompare(b.name)); break;
-    default:           filteredProducts.sort((a,b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    default:           filteredProducts.sort((a,b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0) || (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
   }
 }
 

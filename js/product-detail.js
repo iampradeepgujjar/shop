@@ -76,6 +76,12 @@ function renderProductDetail() {
         </span>
       </div>
 
+      ${product.socialProof ? `
+        <div class="pd-social-proof">
+          <span>🛒</span> ${product.socialProof}
+        </div>
+      ` : ''}
+
       <!-- PRICE -->
       <div class="pd-price-section">
         <div>
